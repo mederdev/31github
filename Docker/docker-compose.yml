@@ -7,7 +7,12 @@ services:
       - '5432:5432'
     networks:
       - api
+    volumes:
+      - pgData:/data/db
+      - ./data/postgres:/var/lib/postgresql
 
+volumes:
+  pgData:
 
 networks:
   api:
